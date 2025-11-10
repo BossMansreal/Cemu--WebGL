@@ -1,36 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Cemu WebGL (Local Mode)</title>
-  <script type="module" src="./main.js"></script>
+  <meta charset="utf-8" />
+  <title>Cemu-WebGL (Local-only)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <style>
-    html, body {
-      margin: 0;
-      background: #000;
-      overflow: hidden;
-      font-family: monospace;
-      color: white;
-    }
-    #overlay {
-      position: absolute;
-      top: 8px;
-      left: 8px;
-      z-index: 10;
-    }
-    input[type="file"] {
-      background: #333;
-      color: white;
-      border: 1px solid #777;
-      padding: 4px;
-      cursor: pointer;
-    }
+    html,body { margin:0; height:100%; background:#000; color:#fff; font-family:monospace; }
+    #overlay { position:absolute; z-index:10; left:10px; top:10px; }
+    input[type=file] { color: #fff; background:#222; border:1px solid #444; padding:6px; }
+    #canvas-wrap { width:100%; height:100%; }
   </style>
 </head>
 <body>
   <div id="overlay">
-    🎮 Load your ROM:
-    <input type="file" id="romInput" accept=".gb,.gba,.nes,.bin,.rom" />
+    🎮 Load ROM:
+    <input id="romInput" type="file" accept=".gb,.gba,.nes,.bin,.rom" />
+    &nbsp;&nbsp;
+    <button id="startBtn">Start</button>
   </div>
+
+  <!-- Main script (module) -->
+  <script type="module" src="./main.js"></script>
 </body>
 </html>
