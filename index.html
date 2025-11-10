@@ -2,22 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Cemu WebGL (WasmBoy Edition)</title>
+  <title>Cemu WebGL (Local Mode)</title>
   <script type="module" src="./main.js"></script>
   <style>
-    html, body { margin: 0; background: #000; overflow: hidden; }
-    canvas { display: block; }
+    html, body {
+      margin: 0;
+      background: #000;
+      overflow: hidden;
+      font-family: monospace;
+      color: white;
+    }
     #overlay {
       position: absolute;
-      color: white;
       top: 8px;
       left: 8px;
-      font-family: monospace;
+      z-index: 10;
+    }
+    input[type="file"] {
+      background: #333;
+      color: white;
+      border: 1px solid #777;
+      padding: 4px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <div id="overlay">🎮 Game Boy Emulator via Three.js</div>
+  <div id="overlay">
+    🎮 Load your ROM:
+    <input type="file" id="romInput" accept=".gb,.gba,.nes,.bin,.rom" />
+  </div>
 </body>
 </html>
-
